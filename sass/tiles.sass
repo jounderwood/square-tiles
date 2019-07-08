@@ -1,0 +1,37 @@
+@import './mixins'
+
+$tile-spacing: 0.25rem !default
+$max-tiles-number: 12 !default
+
+.tiles
+  display: flex
+  flex-wrap: wrap
+  align-items: stretch
+
+  & > .tile
+    width: 50%
+    position: relative
+    
+    & > .inner
+      +fit
+      overflow: hidden
+      margin: $tile-spacing
+
+    &:after
+      content: ""
+      display: block
+      padding-top: calc(100%)
+
+  @for $i from 1 through $max-tiles-number
+    $tile-width: 100% / $i
+
+    &.in-row-#{$i}
+      & > .tile
+        width: $tile-width
+
+      @for $j from 1 through $i
+        & > .tile.size-#{$j}
+          width: $tile-width * $j
+
+          &:after
+            padding-top: calc(100% / #{$j})

@@ -1,0 +1,46 @@
+{
+  "name": "square-tiles",
+  "version": "0.0.1",
+  "description": "Responsive square tiles made with flexbox",
+  "main": "square-tiles.sass",
+  "unpkg": "css/square-tiles.css",
+  "style": "square-tiles/css/square-tiles.min.css",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joeunderwood/square-tiles.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "css",
+    "sass",
+    "flexbox",
+    "responsive",
+    "grid"
+  ],
+  "bugs": {
+    "url": "https://github.com/joeunderwood/square-tiles/issues"
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.5.1",
+    "clean-css-cli": "^4.3.0",
+    "node-sass": "^4.12.0",
+    "postcss-cli": "^6.1.2",
+    "rimraf": "^2.6.3"
+  },
+  "scripts": {
+    "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
+    "build-autoprefix": "postcss --use autoprefixer --map false --output css/square-tiles.css css/square-tiles.css",
+    "build-cleancss": "cleancss -o css/square-tiles.min.css css/square-tiles.css",
+    "build-sass": "node-sass --output-style expanded --source-map true square-tiles.sass css/square-tiles.css",
+    "build-clean": "rimraf css",
+    "deploy": "npm run build",
+    "start": "npm run build-sass -- --watch"
+  },
+  "files": [
+    "css",
+    "sass",
+    "square-tiles.sass",
+    "LICENSE",
+    "README.md"
+  ]
+}
