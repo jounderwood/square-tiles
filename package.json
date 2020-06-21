@@ -21,11 +21,11 @@
     "url": "https://github.com/joeunderwood/square-tiles/issues"
   },
   "devDependencies": {
-    "autoprefixer": "^9.5.1",
+    "autoprefixer": "^9.8.2",
     "clean-css-cli": "^4.3.0",
-    "node-sass": "^4.12.0",
-    "postcss-cli": "^6.1.2",
-    "rimraf": "^2.6.3"
+    "node-sass": "^4.14.1",
+    "postcss-cli": "^7.1.1",
+    "rimraf": "^2.7.1"
   },
   "scripts": {
     "build": "npm run build-clean && npm run build-sass && npm run build-autoprefix && npm run build-cleancss",
